@@ -1,0 +1,13 @@
+services:
+- type: web
+  name: forex-crypto-ai
+  env: python
+  region: frankfurt
+  plan: starter
+  buildCommand: pip install -r requirements.txt
+  startCommand: python app.py
+  envVars:
+  - key: SERVER_ENDPOINT
+    value: ""  # ضع رابط API لسيرفرك لو تبغى POST (اختياري)
+  - key: ALPHA_VANTAGE_KEY
+    value: ""  # مفتاح Alpha Vantage للفوركس (اختياري)
